@@ -42,6 +42,6 @@ window.onload = function () {
 
     }
     document.body.appendChild(configlan);
-    // renderProfiles(perfiles);
+    renderProfiles(perfiles);
 
 }
