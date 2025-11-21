@@ -52,7 +52,11 @@ nav ul li {
     gap: 20px;
     padding: 20px;
 }
+.index a{
+    text-decoration: none;
+    color: black;
 
+}
 .index section ul li {
     display: flex;
     justify-content: space-between;
@@ -158,6 +162,9 @@ footer {
 
 .perfil a:hover {
     color: red;
+}
+.vacio{
+    color: #87AFEB
 }
 
 @media (min-width: 480px) {
