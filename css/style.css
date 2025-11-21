@@ -84,10 +84,6 @@ li {
     align-items: center;
 }
 
-.index .grande{
-    display: none;
-}
-
 /* Perfil */
 
 .perfil img {
@@ -126,6 +122,7 @@ li {
 }
 
 .perfil .info {
+    width: 100%;
     display: flex;
     flex-direction: row;
 }
@@ -161,9 +158,6 @@ li {
     color: red;
 }
 
-.perfil #grande {
-    display: none;
-}
 @media (min-width: 480px) {
     .perfil h1{
         font-size: 40px;
@@ -189,18 +183,6 @@ li {
     .perfil img {
         width: 100%;
 
-    }
-    .perfil #grande {
-        display: block;
-    }
-    .perfil #peque {
-        display: none;
-    }
-    .index .grande {
-        display: block;
-    }
-    .index .peque {
-        display: none;
     }
     .perfil img {
         object-fit: cover;
