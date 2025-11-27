@@ -2,7 +2,7 @@ function renderProfiles(profile, conf) {
   
   const container = document.querySelector('.container');
   container.innerHTML = `
-    <img src="${profile.ci}/${profile.ci}.jpg" id="grande" alt="" width="200">
+    <img src="${profile.ci}/${profile.ci}.jpg" alt="" width="200">
     <div class="textContainer">
       <h1>${profile.nombre}</h1>
       <p class="description">
@@ -29,8 +29,8 @@ function renderProfiles(profile, conf) {
         <p>${profile.lenguajes.map(e => ` ${e}`)}</p>
       </div>
       <div class="contact">
-        <p>${conf.email}</p>
-        <a href="mailto:${profile.email}">${profile.email}</a>
+        <p>${conf.email} <a href="mailto:${profile.email}">${profile.email}</a></p>
+        
       </div>
     </div>`
 

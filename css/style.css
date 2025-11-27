@@ -62,7 +62,7 @@ nav ul li {
     justify-content: space-between;
     flex-direction: column;
     background-color: #F5F5F5;
-    height: 400px;
+    height: 300px;
     width: 300px;
     padding: 20px;
     text-align: center;
@@ -74,10 +74,14 @@ nav ul li {
     transform: rotate(5deg) scale(1.05);
 }
 
-.index section ul li img {
+.index section ul li a img {
     width: 100%;
-    height: 300px;
+    height: 230px;
     object-fit: contain;
+}
+.index section ul li a p {
+    color: #87AFEB;
+    font-weight: 600;
 }
 
 footer {
@@ -95,7 +99,7 @@ footer {
 .perfil img {
     object-fit: cover;
     border-top-left-radius: 60px;
-    height: 346px;
+    height: 300px;
     width: 100%;
 }
 
@@ -108,6 +112,7 @@ footer {
     width: 100%;
     max-width: 900px;
     margin: 10px;
+    padding: 30px;
 }
 
 .perfil h1 {
@@ -123,7 +128,12 @@ footer {
 
 .perfil .textContainer {
     border: 2px solid black;
+    height: 100%;
     padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
     box-shadow: 4px 4px rgba(0, 0, 0, 0.2);
 }
 
@@ -160,7 +170,7 @@ footer {
     color: orange;
 }
 
-.perfil a:hover {
+.perfil a:active {
     color: red;
 }
 .vacio{
@@ -184,18 +194,18 @@ footer {
     .perfil p{
         font-size: 15px;
     }
-
+    
     .perfil .container {
         flex-direction: row;
+        height: 450px;
     }
-
     .perfil img {
         width: 100%;
 
     }
     .perfil img {
-        object-fit: cover;
+        object-fit: contain;
         border-top-left-radius: 60px;
-        height: 346px;
+        height: 100%;
     }
 }

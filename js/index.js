@@ -12,7 +12,7 @@ function renderItem(profile, lang) {
     return `
     <li>
         <a href="perfil.html?ci=${profile.ci}&lang=${lang}">
-            <img class="grande" src="${profile.imagen}" alt="mi imágen">
+            <img src="${profile.imagen}" alt="mi imágen">
             <p>${profile.nombre}</p>
         </a>
     </li>`
