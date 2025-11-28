@@ -55,8 +55,9 @@ window.onload = function () {
 
     searchButton.onclick = function (e) {
         const query = searchBar.querySelector('.buscar').value.toLowerCase();
+
         const filteredProfiles = perfiles.filter(profile => profile.nombre.toLowerCase().includes(query));
-        if(filteredProfiles.length > 0){
+        if(filteredProfiles.length > 0 && !query.length === 0){
             renderProfiles(filteredProfiles);
         }else{
             emptyResult(query)
