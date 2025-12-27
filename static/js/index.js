@@ -1,5 +1,6 @@
 window.onload = async function () {
-    const { data, config } = await fetchProfilesAndLanguage()
+    const language = new URLSearchParams(window.location.search).get("lang");
+    const { data, config } = await fetchProfilesAndLanguage(language);
     renderHeader(data, config);
     renderProfiles(data, config);
 
@@ -27,11 +28,20 @@ window.onload = async function () {
         if (!item) return;
 
         const ci = item.dataset.ci
-        window.location.href = "/ATI/perfil/" + ci + "?lang=" + new URLSearchParams(window.location.search).get("lang");
+        history.pushState(
+            { ci, language },
+            "",
+            `/ATI/perfil?ci=${ci}&lang=${language}`
+        );
         renderProfileDetail(ci, config)
     });
     document.getElementById("logo").addEventListener("click", () => {
-        window.location.href = "/ATI/index.py"
+        history.pushState(
+            { language },
+            "",
+            `/ATI/index.py?lang=${language}`
+        );
+        renderProfiles(data, config);
     })
 }
 
@@ -101,7 +111,7 @@ function renderHeader(profile, config) {
 function renderProfiles(profiles) {
     const gallery = document.querySelector('#profiles');
     gallery.classList.remove("perfil");
-    gallery.innerHTML = `<ul>${profiles.map(profile => {
+    gallery.innerHTML = `<ul class="perfilesList">${profiles.map(profile => {
 
         return renderItem(profile);
     }).join('')}</ul>`;
@@ -119,8 +129,8 @@ function renderItem(profile) {
     `
 }
 
-async function fetchProfilesAndLanguage() {
-    const language = new URLSearchParams(window.location.search).get("lang");
+async function fetchProfilesAndLanguage(language) {
+
     if (!language) {
         let url = window.location.href;
         if (url.indexOf('?') > -1) {
